@@ -19,21 +19,33 @@
 */
 
 
+
 /**
  * End Global Variables
  * Start Helper Functions
- * 
+ *
 */
 
-
+function buildNavbar() {
+    var pageSections = document.querySelectorAll('section');
+    var navbarList = document.getElementById('navbar__list');
+    for (var i = 0; i < pageSections.length; i++) {
+        var navItem = document.createElement('li');
+        var navLabel = pageSections[i].dataset.nav;
+        navItem.innerHTML = navLabel;
+        navbarList.appendChild(navItem);
+    }
+};
 
 /**
  * End Helper Functions
  * Begin Main Functions
- * 
+ *
 */
 
 // build the nav
+
+buildNavbar();
 
 
 // Add class 'active' to section when near top of viewport
@@ -45,7 +57,7 @@
 /**
  * End Main Functions
  * Begin Events
- * 
+ *
 */
 
 // Build menu 
@@ -53,5 +65,3 @@
 // Scroll to section on link click
 
 // Set sections as active
-
-
