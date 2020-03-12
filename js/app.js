@@ -40,8 +40,12 @@ const buildNavbar = () => {
         const navItemLink = document.createElement('a');
         const navLabel = section.dataset.nav;
         navItemLink.className = 'menu__link';
+        navItemLink.id = section.id;
         navItemLink.innerHTML = navLabel;
-        navItemLink.addEventListener('click', () => scrollToAnchor(section.id));
+        navItemLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollToAnchor(section.id);
+        });
         navItem.appendChild(navItemLink);
         navbarList.appendChild(navItem);
     }
@@ -53,13 +57,20 @@ const setActiveSectionOnScroll = () => {
         const { top } = section.getBoundingClientRect();
         const offset = section.offsetHeight;
         /**
+         * We need to find the link in the navbar with the same id as the section.
+         * Inside the <li> element, the first child is the menu link.
+         */
+        const activeMenuItem = [...navbarList.children].find((item) => item.children[0].id === section.id);
+        /**
          * If the element is 100px offset from the top and 100 offset from the bottom
          * set the class active to the section element, otherwise remove it.
          */
         if (top < 100 && top >= -Math.abs(offset - 100)) {
             section.classList.add('your-active-class');
+            activeMenuItem.classList.add('menu__link--active');
         } else {
             section.classList.remove('your-active-class');
+            activeMenuItem.classList.remove('menu__link--active');
         }
     }
 }
