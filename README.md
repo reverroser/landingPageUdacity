@@ -1,13 +1,11 @@
 # Landing Page Project
 
-## Table of Contents
+This is the second project of the Frontend Development nanodegree from Udacity.
 
-* [Instructions](#instructions)
+This project was done following the guidlines in the exercise desciption and taking [udacity's seed repo](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page) as starting point.
 
-## Instructions
+This is a mock project to practice generating content dynamically, scrolling to anchors and apply smooth scrolling in Javascript.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Usage
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+To run this project, you just need to open the index.html file in your browser.
